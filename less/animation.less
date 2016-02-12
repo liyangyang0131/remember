@@ -1,0 +1,171 @@
+//出现，隐藏
+@keyframes show {
+  0%{
+    transform:scale(0,0);
+    opacity:0;
+  }
+  100%{
+    transform:scale(1,1);
+    opacity:1;
+  }
+}
+@keyframes hide {
+  0%{
+    transform:scale(1,1);
+    opacity:1;
+  }
+  100%{
+    transform:scale(0,0);
+    opacity:0;
+  }
+}
+*[data-sport=show]{
+  animation:show 1s ease forwards;
+  transform-origin: top left;
+}
+*[data-sport=hide]{
+  animation:hide 1s ease forwards;
+  transform-origin: top left;
+}
+
+//上滑，下滑
+@keyframes slideUp {
+  0%{
+    transform:scale(1,1);
+  }
+  100%{
+    transform:scale(1,0);
+  }
+}
+@keyframes slideDown {
+  0%{
+    transform:scale(1,0);
+  }
+  100%{
+    transform:scale(1,1);
+  }
+}
+
+*[data-sport=slideUp]{
+  animation:slideUp 1s ease forwards;
+  transform-origin: top center;
+}
+*[data-sport=slideDown]{
+  animation:slideDown 1s ease forwards;
+  transform-origin: top center;
+}
+
+
+//淡入淡出
+@keyframes fadeIn {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+@keyframes fadeOut {
+  0%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+  }
+}
+*[data-sport=fadeIn]{
+  animation:fadeIn 1s ease forwards;
+}
+*[data-sport=fadeOut]{
+  animation:fadeOut 1s ease forwards;
+}
+
+
+//圆周运动
+@r:20;
+@d:0;
+@s:20;
+@num:360/@s;
+.round(@i:0) when (@i<=@num) {
+    @select:100/@num*@i*1%;
+    @d:@s*@i;
+    @{select}{
+      transform:translate(cos(@d*pi()/180)*@r*1px,sin(@d*pi()/180)*@r*1px);
+    }
+  .round(@i+1);
+}
+@keyframes round {
+  .round();
+}
+*[data-sport=round]{
+    animation:round 2s linear infinite;
+}
+
+
+//曲线运动
+@r:50;
+@r1:8;
+@d:0;
+@d1:0;
+@s:2;
+@s1:20;
+@num:360/@s;
+
+.quxian(@i:0) when (@i<=@num) {
+  @select:100/@num*@i*1%;
+  @d:@s*@i;
+  @d1:@s1*@i;
+  @{select}{
+    transform:translate(cos(@d*pi()/180)*@r*1px,sin(@d1*pi()/180)*@r1*1px);
+  }
+  .quxian(@i+1);
+}
+@keyframes quxian {
+  .quxian();
+}
+*[data-sport=quxian]{
+  animation:quxian 2s linear ;
+}
+
+
+//旋转
+
+@keyframes xuanzhuan {
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
+}
+*[data-sport=xuanzhuan]{
+  animation: xuanzhuan 2s linear infinite;
+  transform-origin: center;
+}
+
+//闪动
+@keyframes sd {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+*[data-sport=sd]{
+  animation: sd 1s linear 3 alternate ;
+}
+
+//放大
+@keyframes fd {
+  0%{
+    transform:scale(1,1);
+  }
+  100%{
+    transform:scale(1.3,1.3);
+  }
+}
+
+*[data-sport=fd]{
+  animation:fd 1s ease alternate 4;
+}

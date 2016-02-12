@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+     <div class="start"></div>
+
+     <div class="main">
+         <div class="panel header">
+             <div class="panel-heading">
+                 <div class="glyphicon glyphicon-edit" style="font-size:30px"></div>
+                 <h3 class="panel-title" style="font-size:24px">备忘录</h3>
+                 <div class="todyTime"></div>
+             </div>
+             <div class="panel-body" style="background:">
+                 <div class="glyphicon glyphicon-plus add"></div>
+             </div>
+         </div>
+
+         <form>
+             <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <div class="form-group">
+                 <label for="exampleInputTitle">标题</label>
+                 <input type="title" class="form-control title" id="exampleInputTitle" placeholder="title">
+             </div>
+
+             <div class="form-group">
+                 <label for="exampleInputContent">内容</label>
+                 <textarea class="form-control content" rows="3" id="exampleInputContent"></textarea>
+             </div>
+
+             <div class="form-group">
+                 <label for="time">时间</label>
+                 <input type="date" id="time">
+             </div>
+             <button type="button" class="btn btn-default">Submit</button>
+         </form>
+
+
+         <div class="panel panel-warning panel panel-default detail">
+             <button type="button" class="close off" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <div>
+                 <h3 class="panel-title addC" >标题</h3>
+             </div>
+             <div class="panel-body detail-title change" style="cursor: pointer">
+                 详情
+             </div>
+
+             <div>
+                 <h3 class="panel-title addC">内容</h3>
+             </div>
+             <div class="panel-body detail-con change" style="height:130px;cursor:pointer">
+                 详情
+             </div>
+
+             <div>
+                 <h3 class="panel-title addC">时间</h3>
+             </div>
+             <div class="panel-body detail-time">
+                 详情
+             </div>
+         </div>
+
+        <div class="warn">
+            <h5></h5>
+            <div class="anniu">确定</div>
+        </div>
+     </div>
+</body>
+</html>
