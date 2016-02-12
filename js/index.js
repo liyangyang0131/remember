@@ -9,7 +9,7 @@ $(function(){
 
     //拖拽事件
     var W = $(document).width()-260;
-    var H = $(document).height()-$(".detail").height()-70;
+    var H = $(document).height()-358;
     $(document).on("mousedown",function(e){
         var x = e.offsetX;
         var y = e.offsetY;
